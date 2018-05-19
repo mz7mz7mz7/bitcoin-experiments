@@ -86,3 +86,25 @@ for (var i = 0; i < bs.length; i++) {
 }
 
 
+// Which addresses of B3 are covered by B2 and B4:
+var b3TrueAddresses = new Array(b3Arr.length).fill(false);
+for (var i = 0; i < b3Arr.length; i++) {
+    if (b2.contains(b3Arr[i]) || b4.contains(b3Arr[i])) {
+        b3TrueAddresses[i] = true;
+    }
+}
+console.info('B3 arr: ' + b3TrueAddresses);
+console.info('B3 false positives: ');
+b3TrueAddresses.forEach(function(el, idx){if (!el) console.info(''+idx+',')});
+
+// Which addresses of B4 are covered by B2 and B3:
+var b4TrueAddresses = new Array(b4Arr.length).fill(false);
+for (var i = 0; i < b4Arr.length; i++) {
+    if (b2.contains(b4Arr[i]) || b3.contains(b4Arr[i])) {
+        b4TrueAddresses[i] = true;
+    }
+
+}
+console.info('B4 arr: ' + b4TrueAddresses);
+console.info('B4 false positives: ');
+b4TrueAddresses.forEach(function(el, idx){if (!el) console.info(''+idx+',')});
