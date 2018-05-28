@@ -137,7 +137,6 @@ fun main(args : Array<String>) {
                 }
             }
             if (smallerThenAllInputs) {
-                // TODO: tutaj jest cos zle, minOutIndex to nie jest przeciez cluster index !!!!!
                 // Merge change output with the input cluster
                 val clusterIndexOut = whichCluster(minOutAddr!!)
                 mergeClusters(clusterIdxIn, clusterIndexOut)
